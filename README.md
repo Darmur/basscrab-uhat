@@ -80,6 +80,7 @@ dtparam=act_led_gpio=26
 The most common plugins to handle the LED is ***GPIO_Control***.
 Unfortunately it is not available yet on the Volumio Plugin Store, but it can be manually installed with SSH, with the sequence of the following commands:
 ```
+sudo apt update
 sudo apt -y install build-essential
 cd ~
 wget http://plugins.volumio.org/plugins/volumio/armhf/system_controller/gpio_control/gpio_control.zip
