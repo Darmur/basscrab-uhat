@@ -27,6 +27,10 @@ The Rotary Encoders with push-buttons can be used to control the audio playback 
 
 Full documentation is available on this public Github repository, including BOM and SMD positioning files, for automated assembly. Please feel free to download gerber files and documentation, to order PCBs and to copy/improve the design, if you like!
 
+![Front](https://raw.githubusercontent.com/Darmur/basscrab-uhat/main/pictures/front.jpg)
+
+![Back](https://raw.githubusercontent.com/Darmur/basscrab-uhat/main/pictures/back.jpg)
+
 
 ### Volumio Setup
 
