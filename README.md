@@ -21,7 +21,9 @@ BassCrab-uHAT is powered by the following peripherals:
 The onboard Audio Codec is fully supported in the latest RaspiOS and Volumio images.
 To enable it on RaspiOS, please add the following string to the config.txt file:
 
-```dtoverlay=fe-pi-audio```
+```
+dtoverlay=fe-pi-audio
+```
 
 The Rotary Encoders with push-buttons can be used to control the audio playback (play, pause, volume-up, volume-down, previous song, next song, etc.). The onboard LED can be used as an indicator for SD-Card activity or playback status, as an example.
 
@@ -47,7 +49,9 @@ SSH is required to enable both Headphone and Line-out and to adjust their signal
 
 After enabling SSH, please login into your Volumio system and type the following command:
 
-```alsamixer```
+```
+alsamixer
+```
 
 Right after that, press **F6**, select **Fe-Pi Audio** and press **ENTER**
 
@@ -58,3 +62,40 @@ Use the **left/right** arrows to select the parameter to be changed, **up/down**
 ![Alsamixer](https://raw.githubusercontent.com/Darmur/basscrab-uhat/main/volumio_settings/alsamixer_settings.png)
 
 Pay attention to the two letters below the level setting: with **MM** the resource is muted, with **OO** the resource is active.
+
+
+### User LED Setup
+
+BassCrab-uHAT features an Ice-Blue LED. It is connected to GPIO26 of the Raspberry Pi (Pin 37).
+
+##### User LED as a SD-Card indicator
+
+Add the following line to ***userconfig.txt*** (for Volumio) or to ***config.txt*** (for RaspiOS)
+```
+dtparam=act_led_gpio=26
+```
+
+##### User LED as a System or Playback Status indicator
+
+The most common plugins to handle the LED is ***GPIO_Control***.
+Unfortunately it is not available yet on the Volumio Plugin Store, but it can be manually installed with SSH, with the sequence of the following commands:
+```
+sudo apt -y install build-essential
+cd ~
+wget http://plugins.volumio.org/plugins/volumio/armhf/system_controller/gpio_control/gpio_control.zip
+mkdir ./gpio_control
+miniunzip gpio_control.zip -d ./gpio_control
+cd gpio_control
+volumio plugin install
+cd /data/plugins/system_controller/gpio_control/
+npm install --save onoff@6.0.0
+npm install --save sleep@6.2.0
+```
+
+When the plugin is installed and enabled, those settings should be applied, for either system status or playback status:
+
+![GPIO-control_system](https://raw.githubusercontent.com/Darmur/basscrab-uhat/main/volumio_settings/gpio-control_system.png)
+
+![GPIO-control_system](https://raw.githubusercontent.com/Darmur/basscrab-uhat/main/volumio_settings/gpio-control_playback.png)
+
+
