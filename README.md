@@ -68,7 +68,7 @@ Pay attention to the two letters below the level setting: with **MM** the resour
 
 BassCrab-uHAT features an Ice-Blue LED. It is connected to GPIO26 of the Raspberry Pi (Pin 37).
 
-##### User LED as a SD-Card indicator
+##### User LED as a SD-Card Activity indicator
 
 Add the following line to ***userconfig.txt*** (for Volumio) or to ***config.txt*** (for RaspiOS)
 ```
