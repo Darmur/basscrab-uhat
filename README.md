@@ -34,6 +34,11 @@ Full documentation is available on this public Github repository, including BOM 
 ![Back](https://raw.githubusercontent.com/Darmur/basscrab-uhat/main/pictures/back.jpg)
 
 
+### Availability
+
+Samples are currently available for purchase on the [PCBWay Bazaar Store](https://www.pcbway.com/project/gifts_detail/BassCrab_uHAT_5812f497.html).
+Those assembled PCBs are ready to be used, no soldering skills are required!
+
 ### Volumio Setup
 
 Download the latest **Volumio 3** image from the [official website](https://volumio.com/en/get-started/), than flash the image on a SD-card, as usual. Please refer to the [Quickstart guide](https://cdn.volumio.com/wp-content/uploads/2021/09/Quick-Start-Guide-Volumio.pdf) for the initial setup of your Volumio-based system.
